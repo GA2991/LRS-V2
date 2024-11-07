@@ -8,19 +8,20 @@ public class Dialogue : MonoBehaviour
     public TextMeshProUGUI textComponent;
     public string[] lines;
     public float textSpeed;
+
     private int index;
-    private bool isPlayerNearby = false;
 
     // Start is called before the first frame update
     void Start()
     {
         textComponent.text = string.Empty;
+        StartDialogue();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (isPlayerNearby && Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0))
         {
             if (textComponent.text == lines[index])
             {
@@ -31,24 +32,6 @@ public class Dialogue : MonoBehaviour
                 StopAllCoroutines();
                 textComponent.text = lines[index];
             }
-        }
-    }
-
-    void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            isPlayerNearby = true;
-            StartDialogue();
-        }
-    }
-
-    void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            isPlayerNearby = false;
-            textComponent.text = string.Empty;
         }
     }
 

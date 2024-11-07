@@ -1709,6 +1709,7 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 321455375}
   m_Mesh: {fileID: 5916555830805844537, guid: 3609bb793653c3f4c94736d1360260a9, type: 3}
+<<<<<<< HEAD
 --- !u!1 &414287191
 GameObject:
   m_ObjectHideFlags: 0
@@ -1921,6 +1922,8 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 423571348}
   m_CullTransparentMesh: 1
+=======
+>>>>>>> parent of 111d4be (Dialogue test)
 --- !u!1001 &438147657
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7845,7 +7848,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3384165274638852049}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 1092, y: 323, z: 1208.2}
   m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -8329,7 +8332,6 @@ RectTransform:
   m_Children:
   - {fileID: 1723962541061183233}
   - {fileID: 4770179245168477968}
-  - {fileID: 423571349}
   - {fileID: 664799649716226517}
   - {fileID: 4752555338057082506}
   - {fileID: 4028032218432939092}
