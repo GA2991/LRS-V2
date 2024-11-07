@@ -1710,6 +1710,7 @@ MeshFilter:
   m_GameObject: {fileID: 321455375}
   m_Mesh: {fileID: 5916555830805844537, guid: 3609bb793653c3f4c94736d1360260a9, type: 3}
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!1 &414287191
 GameObject:
   m_ObjectHideFlags: 0
@@ -1922,6 +1923,8 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 423571348}
   m_CullTransparentMesh: 1
+=======
+>>>>>>> parent of 111d4be (Dialogue test)
 =======
 >>>>>>> parent of 111d4be (Dialogue test)
 --- !u!1001 &438147657
