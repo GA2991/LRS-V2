@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.2508438, g: 0.14809538, b: 0.11858547, a: 1}
+  m_IndirectSpecularColor: {r: 0.25080538, g: 0.14789937, b: 0.11852008, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3604,10 +3604,10 @@ RectTransform:
   m_Father: {fileID: 1332467822}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 29671, y: -15440}
-  m_SizeDelta: {x: 1901.2, y: 300}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 3071, y: 17160}
+  m_SizeDelta: {x: 1901.1992, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1092092331
 MonoBehaviour:
@@ -3692,7 +3692,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -1600, w: 0}
+  m_margin: {x: -76.99, y: 0, z: 142.1, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -4688,17 +4688,17 @@ RectTransform:
   m_GameObject: {fileID: 1332467821}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.72, y: 0.3, z: 1}
+  m_LocalScale: {x: 0.9386719, y: 0.3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1092092330}
   m_Father: {fileID: 3626697277152635909}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 0, y: 6450}
-  m_SizeDelta: {x: 0, y: 32600}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: -286.5625, y: 6450}
+  m_SizeDelta: {x: 53200, y: 32600}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1332467823
 MonoBehaviour:
@@ -7516,7 +7516,7 @@ Canvas:
   m_RenderMode: 0
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
-  m_PixelPerfect: 0
+  m_PixelPerfect: 1
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
