@@ -2854,10 +2854,18 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -5387121642470686346, guid: 948bda9a0ccd71c42a20e2ad7e1b1da0, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b393d9719d87fdd4e82506287dcda6d6, type: 2}
     - target: {fileID: 919132149155446097, guid: 948bda9a0ccd71c42a20e2ad7e1b1da0, type: 3}
       propertyPath: m_Name
       value: modelotestciudad
       objectReference: {fileID: 0}
+    - target: {fileID: 7415541026882449965, guid: 948bda9a0ccd71c42a20e2ad7e1b1da0, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: e9a685888d13fa949b528ef63e2429e6, type: 2}
     - target: {fileID: 8598896284057917944, guid: 948bda9a0ccd71c42a20e2ad7e1b1da0, type: 3}
       propertyPath: m_StaticShadowCaster
       value: 0
