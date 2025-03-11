@@ -4,73 +4,67 @@ using UnityEngine;
 
 public class CarEnterExitSystem : MonoBehaviour
 {
-
-    public MonoBehaviour CarController;
-    public Transform Car;
-    public Transform Player;
+    public MonoBehaviour CarController; // Controlador del coche
+    public Transform Car;               // Transform del coche
+    public Transform Player;            // Transform del jugador
 
     [Header("Cameras")]
-    public GameObject PlayerCam;
-    public GameObject CarCam;
+    public GameObject PlayerCam;        // Cámara del jugador
+    public GameObject CarCam;           // Cámara del coche
 
-    [SerializeField] GameObject DriveUi;
+    [SerializeField] GameObject DriveUi; // UI de "Conducir"
 
-    bool Candrive;
+    private bool canDrive;              // ¿El jugador puede interactuar con el coche?
+    private bool isDriving = false;     // ¿El jugador está conduciendo?
 
-
-
-    // Start is called before the first frame update
     void Start()
     {
-        CarController.enabled = false;
-        DriveUi.gameObject.SetActive(false);
+        CarController.enabled = false;          // Desactiva el controlador del coche al inicio
+        DriveUi.gameObject.SetActive(false);    // Oculta el UI al inicio
     }
 
-    // Update is called once per frame
     void Update()
     {
-
-        if (Input.GetKeyDown(KeyCode.F) && Candrive)  // Here After Click F button and trigger is true player is driving
+        if (Input.GetKeyDown(KeyCode.E) && canDrive) // Usar la tecla E para interactuar
         {
-
-            CarController.enabled = true; // After Click F button Car Controller Script is enabled
-
-            DriveUi.gameObject.SetActive(false);
-
-            // Here we parent Car with player
-            Player.transform.SetParent(Car);
-            Player.gameObject.SetActive(false);
-
-            // Camera
-            PlayerCam.gameObject.SetActive(false);
-            CarCam.gameObject.SetActive(true);
-        }
-
-        if (Input.GetKeyDown(KeyCode.G))
-        {
-
-
-            CarController.enabled = false; // After Click G button Car Controller Script is disable
-
-
-            // Here We Unparent the Player with Car
-            Player.transform.SetParent(null);
-            Player.gameObject.SetActive(true);
-
-            // Here If Player Is Not Driving So PlayerCamera turn On and Car Camera turn off
-
-            PlayerCam.gameObject.SetActive(true);
-            CarCam.gameObject.SetActive(false);
+            if (isDriving)
+            {
+                ExitCar(); // Salir del coche
+            }
+            else
+            {
+                EnterCar(); // Entrar al coche
+            }
         }
     }
 
+    private void EnterCar()
+    {
+        isDriving = true;
+        CarController.enabled = true;          // Activa el controlador del coche
+        DriveUi.gameObject.SetActive(false);   // Oculta el UI
+        Player.transform.SetParent(Car);       // Hace al jugador hijo del coche
+        Player.gameObject.SetActive(false);    // Oculta al jugador
+        PlayerCam.gameObject.SetActive(false); // Activa la cámara del coche
+        CarCam.gameObject.SetActive(true);
+    }
+
+    private void ExitCar()
+    {
+        isDriving = false;
+        CarController.enabled = false;         // Desactiva el controlador del coche
+        Player.transform.SetParent(null);      // Separa al jugador del coche
+        Player.gameObject.SetActive(true);     // Muestra al jugador
+        PlayerCam.gameObject.SetActive(true);  // Activa la cámara del jugador
+        CarCam.gameObject.SetActive(false);
+    }
 
     void OnTriggerStay(Collider col)
     {
         if (col.gameObject.tag == "Player")
         {
-            DriveUi.gameObject.SetActive(true);
-            Candrive = true;
+            DriveUi.gameObject.SetActive(true); // Mostrar el UI cuando el jugador está cerca
+            canDrive = true;
         }
     }
 
@@ -78,8 +72,8 @@ public class CarEnterExitSystem : MonoBehaviour
     {
         if (col.gameObject.tag == "Player")
         {
-            DriveUi.gameObject.SetActive(false);
-            Candrive = false;
+            DriveUi.gameObject.SetActive(false); // Ocultar el UI al alejarse
+            canDrive = false;
         }
     }
 }
