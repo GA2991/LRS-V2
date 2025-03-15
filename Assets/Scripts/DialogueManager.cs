@@ -12,31 +12,57 @@ public class DialogueManager : MonoBehaviour
     private int index;
     private bool isTyping = false;
 
-    private void Awake()
-    {
-        if (Instance == null)
-        {
-            Instance = this;
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
+    private void Start()
+    { 
+    gameObject.SetActive(false); // Asegura que empiece desactivado 
     }
+    private void Awake()
+{
+    if (Instance == null)
+    {
+        Instance = this;
+    }
+    else
+    {
+        Destroy(gameObject);
+    }
+
+    if (textComponent == null)
+    {
+        Debug.LogError("El componente TextMeshProUGUI no está asignado en el Inspector del DialogueManager.");
+    }
+}
+
 
     public void StartDialogue(string[] dialogueLines)
+{
+    if (textComponent == null)
     {
-        lines = dialogueLines;
-        index = 0;
-        textComponent.text = string.Empty;
-        gameObject.SetActive(true); // Activa el Canvas al iniciar el diálogo
-        StartCoroutine(TypeLine());
+        Debug.LogError("El componente TextMeshProUGUI no está asignado en el Inspector.");
+        return;
     }
 
+    lines = dialogueLines;
+    index = 0;
+    textComponent.text = string.Empty;
+
+    // Activa el objeto si está desactivado
+    if (!gameObject.activeSelf)
+    {
+        gameObject.SetActive(true);
+    }
+
+    StartCoroutine(TypeLine());
+}
     private void Update()
     {
+        // Asegúrate de que textComponent y lines estén correctamente configurados 
+        if (textComponent == null || lines == null || lines.Length == 0) 
+        { 
+            return;
+        }
         // Avanzar al hacer clic
-        if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.E)) // Botón izquierdo del mouse
+        if (Input.GetMouseButtonDown(0)) // Botón izquierdo del mouse
         {
             if (!isTyping && textComponent.text == lines[index])
             {
