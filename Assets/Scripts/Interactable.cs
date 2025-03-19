@@ -47,7 +47,7 @@ public class Interactable : MonoBehaviour
             }
         }
     }
-    //
+    
     private void TriggerDialogue()
     {
         if (DialogueManager.Instance != null)

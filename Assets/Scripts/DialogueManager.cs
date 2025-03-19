@@ -14,46 +14,46 @@ public class DialogueManager : MonoBehaviour
 
     private void Start()
     { 
-    gameObject.SetActive(false); // Asegura que empiece desactivado 
+        gameObject.SetActive(false); // Asegura que empiece desactivado 
     }
     private void Awake()
-{
-    if (Instance == null)
     {
-        Instance = this;
-    }
-    else
-    {
-        Destroy(gameObject);
-    }
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
 
-    if (textComponent == null)
-    {
-        Debug.LogError("El componente TextMeshProUGUI no está asignado en el Inspector del DialogueManager.");
+        if (textComponent == null)
+        {
+            Debug.LogError("El componente TextMeshProUGUI no está asignado en el Inspector del DialogueManager.");
+        }
     }
-}
 
 
     public void StartDialogue(string[] dialogueLines)
-{
-    if (textComponent == null)
     {
-        Debug.LogError("El componente TextMeshProUGUI no está asignado en el Inspector.");
-        return;
-    }
+        if (textComponent == null)
+        {
+            Debug.LogError("El componente TextMeshProUGUI no está asignado en el Inspector.");
+            return;
+        }
 
-    lines = dialogueLines;
-    index = 0;
-    textComponent.text = string.Empty;
+        lines = dialogueLines;
+        index = 0;
+        textComponent.text = string.Empty;
 
-    // Activa el objeto si está desactivado
-    if (!gameObject.activeSelf)
-    {
-        gameObject.SetActive(true);
-    }
+        // Activa el objeto si está desactivado
+        if (!gameObject.activeSelf)
+        {
+            gameObject.SetActive(true);
+        }
 
     StartCoroutine(TypeLine());
-}
+    }
     private void Update()
     {
         // Asegúrate de que textComponent y lines estén correctamente configurados 
