@@ -3946,6 +3946,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 782325440}
     m_Modifications:
+    - target: {fileID: 2742001174396054011, guid: fd995f914a5a9a443b98636785727138, type: 3}
+      propertyPath: maxSpeed
+      value: 130
+      objectReference: {fileID: 0}
     - target: {fileID: 4173759203877041777, guid: fd995f914a5a9a443b98636785727138, type: 3}
       propertyPath: m_Name
       value: Car2
