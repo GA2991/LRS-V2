@@ -14,11 +14,20 @@ public class CarEnterExitSystem : MonoBehaviour
 
     [SerializeField] GameObject DriveUi; // UI de "Conducir"
 
+    public PrometeoCarController carControllerScript; // Referencia al script del controlador del coche
+
     private bool canDrive;              // ¿El jugador puede interactuar con el coche?
     private bool isDriving = false;     // ¿El jugador está conduciendo?
 
     void Start()
     {
+        if (CarController == null || DriveUi == null || carControllerScript == null || Car == null || Player == null || PlayerCam == null || CarCam == null)
+        {
+            Debug.LogError("One or more required components are not assigned in the inspector.");
+            enabled = false;
+            return;
+        }
+
         CarController.enabled = false;          // Desactiva el controlador del coche al inicio
         DriveUi.gameObject.SetActive(false);    // Oculta el UI al inicio
     }
@@ -42,6 +51,7 @@ public class CarEnterExitSystem : MonoBehaviour
     {
         isDriving = true;
         CarController.enabled = true;          // Activa el controlador del coche
+        carControllerScript.enabled = true;    // Activa el script del controlador del coche
         DriveUi.gameObject.SetActive(false);   // Oculta el UI
         Player.transform.SetParent(Car);       // Hace al jugador hijo del coche
         Player.gameObject.SetActive(false);    // Oculta al jugador
@@ -53,10 +63,31 @@ public class CarEnterExitSystem : MonoBehaviour
     {
         isDriving = false;
         CarController.enabled = false;         // Desactiva el controlador del coche
+        carControllerScript.ThrottleOff();     // Detiene la aceleración del coche
+        carControllerScript.enabled = false;   // Desactiva el script del controlador del coche
+        StopCarMovement();                     // Detiene el movimiento del coche
         Player.transform.SetParent(null);      // Separa al jugador del coche
         Player.gameObject.SetActive(true);     // Muestra al jugador
         PlayerCam.gameObject.SetActive(true);  // Activa la cámara del jugador
         CarCam.gameObject.SetActive(false);
+    }
+
+    private void StopCarMovement()
+    {
+        Rigidbody carRigidbody = Car.GetComponent<Rigidbody>();
+        if (carRigidbody != null)
+        {
+            carRigidbody.velocity = Vector3.zero;
+            carRigidbody.angularVelocity = Vector3.zero;
+            ApplyBrakes(carRigidbody); // Aplica fuerza de frenado
+            carRigidbody.Sleep(); // Pone el rigidbody en modo sleep para detener cualquier movimiento residual
+        }
+    }
+
+    private void ApplyBrakes(Rigidbody carRigidbody)
+    {
+        carRigidbody.AddForce(-carRigidbody.velocity * 100f, ForceMode.Acceleration); // Aumenta la fuerza de frenado
+        carRigidbody.AddTorque(-carRigidbody.angularVelocity * 100f, ForceMode.Acceleration); // Aumenta la fuerza de frenado angular
     }
 
     void OnTriggerStay(Collider col)

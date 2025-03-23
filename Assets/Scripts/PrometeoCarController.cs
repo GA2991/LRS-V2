@@ -590,6 +590,7 @@ public class PrometeoCarController : MonoBehaviour
       frontRightCollider.motorTorque = 0;
       rearLeftCollider.motorTorque = 0;
       rearRightCollider.motorTorque = 0;
+      throttleAxis = 0; // Resetea el eje del acelerador
     }
 
     // The following method decelerates the speed of the car according to the decelerationMultiplier variable, where

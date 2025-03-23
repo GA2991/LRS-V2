@@ -36,8 +36,14 @@ public class MotorSound : MonoBehaviour
         // Verifica si ha pasado el tiempo de espera desde la última colisión
         if (Time.time - lastCollisionTime > collisionCooldown && collision.relativeVelocity.magnitude > 7f)
         {
-            // Reproduce el sonido de choque y actualiza el tiempo de la última colisión
-            crashSound.Play();
+            if (crashSound != null)
+            {
+                crashSound.Play();
+            }
+            else
+            {
+                Debug.LogWarning("AudioSource is null. Cannot play sound.");
+            }
             lastCollisionTime = Time.time;
         }
     }
