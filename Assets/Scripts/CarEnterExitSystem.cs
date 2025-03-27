@@ -16,6 +16,8 @@ public class CarEnterExitSystem : MonoBehaviour
 
     public PrometeoCarController carControllerScript; // Referencia al script del controlador del coche
 
+    public AudioClip carDoorSound;       // Sonido de abrir/cerrar la puerta del coche
+
     private bool canDrive;              // ¿El jugador puede interactuar con el coche?
     private bool isDriving = false;     // ¿El jugador está conduciendo?
 
@@ -51,7 +53,8 @@ public class CarEnterExitSystem : MonoBehaviour
     {
         isDriving = true;
         CarController.enabled = true;          // Activa el controlador del coche
-        carControllerScript.enabled = true;    // Activa el script del controlador del coche
+        carControllerScript.enabled = true;   
+        AudioSource.PlayClipAtPoint(carDoorSound, Car.position); // Activa el script del controlador del coche
         DriveUi.gameObject.SetActive(false);   // Oculta el UI
         Player.transform.SetParent(Car);       // Hace al jugador hijo del coche
         Player.gameObject.SetActive(false);    // Oculta al jugador
@@ -65,7 +68,8 @@ public class CarEnterExitSystem : MonoBehaviour
         CarController.enabled = false;         // Desactiva el controlador del coche
         carControllerScript.ThrottleOff();     // Detiene la aceleración del coche
         carControllerScript.enabled = false;   // Desactiva el script del controlador del coche
-        StopCarMovement();                     // Detiene el movimiento del coche
+        StopCarMovement();      
+        AudioSource.PlayClipAtPoint(carDoorSound, Car.position);               // Detiene el movimiento del coche
         Player.transform.SetParent(null);      // Separa al jugador del coche
         Player.gameObject.SetActive(true);     // Muestra al jugador
         PlayerCam.gameObject.SetActive(true);  // Activa la cámara del jugador

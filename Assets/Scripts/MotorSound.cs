@@ -17,6 +17,11 @@ public class MotorSound : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         lastCollisionTime = -collisionCooldown; // Inicializa el temporizador para permitir la primera reproducción
+
+        if (crashSound == null)
+        {
+            Debug.LogWarning("crashSound is not assigned in the Inspector. Please assign an AudioSource.");
+        }
     }
 
     void Update()
