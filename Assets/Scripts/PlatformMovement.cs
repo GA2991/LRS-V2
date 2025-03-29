@@ -4,16 +4,26 @@ using UnityEngine;
 
 public class PlatformMovement : MonoBehaviour
 {
-	public int range = 10;//max height of Box's movement
-	public float xCenter = 6f;
+    public int range = 10; // Maximum distance the platform will move horizontally
+    private float initialX; // Store the initial X position of the platform
 
-	Rigidbody rb;
-	private void Start() {
-		rb = GetComponent<Rigidbody>();
-	}
-	
-	void FixedUpdate()
-	{
-		rb.MovePosition(new Vector3(xCenter + Mathf.PingPong(Time.time * 2, range) - range / 2f, transform.position.y, transform.position.z));
-	}
+    private Rigidbody rb;
+
+    private void Start()
+    {
+        // Get the Rigidbody component attached to the platform
+        rb = GetComponent<Rigidbody>();
+
+        // Store the initial X position of the platform
+        initialX = transform.position.x;
+    }
+
+    void FixedUpdate()
+    {
+        // Calculate the new position using Mathf.PingPong for oscillating movement
+        float newX = initialX + Mathf.PingPong(Time.time * 2, range) - range / 2f;
+
+        // Move the platform to the new position
+        rb.MovePosition(new Vector3(newX, transform.position.y, transform.position.z));
+    }
 }
