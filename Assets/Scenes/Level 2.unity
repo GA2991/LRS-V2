@@ -2779,6 +2779,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 221664108733473762, guid: fd995f914a5a9a443b98636785727138, type: 3}
+      propertyPath: crashSound
+      value: 
+      objectReference: {fileID: 1335767603}
     - target: {fileID: 4173759203877041777, guid: fd995f914a5a9a443b98636785727138, type: 3}
       propertyPath: m_Name
       value: Car2
@@ -2795,6 +2799,10 @@ PrefabInstance:
       propertyPath: PlayerCam
       value: 
       objectReference: {fileID: 1119768206}
+    - target: {fileID: 6180926428381317868, guid: fd995f914a5a9a443b98636785727138, type: 3}
+      propertyPath: carDoorSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 2ea30dedfa5e51d49851b6b80941505b, type: 3}
     - target: {fileID: 6180926428381317868, guid: fd995f914a5a9a443b98636785727138, type: 3}
       propertyPath: carControllerScript
       value: 
