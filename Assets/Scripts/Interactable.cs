@@ -31,7 +31,6 @@ public class Interactable : MonoBehaviour
             if (Input.GetKeyDown(interactKey))
             {
                 interactAction.Invoke();
-                pressEText.SetActive(false); // (puede hacer un bug) Oculta el texto de "Presiona E" al interactuar 
                 TriggerDialogue();
             }
         }
@@ -79,6 +78,7 @@ public class Interactable : MonoBehaviour
     {
         if (DialogueManager.Instance != null)
         {
+            pressEText.SetActive(false); // (puede hacer un bug) Oculta el texto de "Presiona E" al interactuar 
             DialogueManager.Instance.StartDialogue(dialogueLines);
         }
         else
