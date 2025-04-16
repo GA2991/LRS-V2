@@ -9,8 +9,20 @@ public class Interactable : MonoBehaviour
     public KeyCode interactKey = KeyCode.E;
     public UnityEvent interactAction;
 
+    [Header("UI Settings")]
+    public GameObject pressEText; // Referencia al objeto de UI que muestra "Presiona E"
+
     [Header("Dialogue Settings")]
     public string[] dialogueLines; // Líneas de diálogo específicas para este objeto
+
+    private void Start()
+    {
+        // Asegúrate de que el texto esté desactivado al inicio
+        if (pressEText != null)
+        {
+            pressEText.SetActive(false);
+        }
+    }
 
     private void Update()
     {
@@ -19,6 +31,7 @@ public class Interactable : MonoBehaviour
             if (Input.GetKeyDown(interactKey))
             {
                 interactAction.Invoke();
+                pressEText.SetActive(false); // (puede hacer un bug) Oculta el texto de "Presiona E" al interactuar 
                 TriggerDialogue();
             }
         }
@@ -29,6 +42,13 @@ public class Interactable : MonoBehaviour
         if (collider.gameObject.CompareTag("Player"))
         {
             isInRange = true;
+
+            // Muestra el texto de "Presiona E"
+            if (pressEText != null)
+            {
+                pressEText.SetActive(true);
+            }
+
             Debug.Log("Player in range");
         }
     }
@@ -38,6 +58,13 @@ public class Interactable : MonoBehaviour
         if (collider.gameObject.CompareTag("Player"))
         {
             isInRange = false;
+
+            // Oculta el texto de "Presiona E"
+            if (pressEText != null)
+            {
+                pressEText.SetActive(false);
+            }
+
             Debug.Log("Player not in range");
 
             // Cierra el diálogo al salir del rango
@@ -47,7 +74,7 @@ public class Interactable : MonoBehaviour
             }
         }
     }
-    
+
     private void TriggerDialogue()
     {
         if (DialogueManager.Instance != null)
