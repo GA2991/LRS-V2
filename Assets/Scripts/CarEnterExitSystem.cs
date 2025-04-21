@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CarEnterExitSystem : MonoBehaviour
 {
-    public MonoBehaviour CarController; // Controlador del coche
+    public PrometeoCarController carControllerScript; // Referencia al script del controlador del coche
     public Transform Car;               // Transform del coche
     public Transform Player;            // Transform del jugador
 
@@ -14,8 +14,6 @@ public class CarEnterExitSystem : MonoBehaviour
 
     [SerializeField] GameObject DriveUi; // UI de "Conducir"
 
-    public PrometeoCarController carControllerScript; // Referencia al script del controlador del coche
-
     public AudioClip carDoorSound;       // Sonido de abrir/cerrar la puerta del coche
 
     private bool canDrive;              // ¿El jugador puede interactuar con el coche?
@@ -23,15 +21,15 @@ public class CarEnterExitSystem : MonoBehaviour
 
     void Start()
     {
-        if (CarController == null || DriveUi == null || carControllerScript == null || Car == null || Player == null || PlayerCam == null || CarCam == null)
+        if (carControllerScript == null || DriveUi == null || Car == null || Player == null || PlayerCam == null || CarCam == null)
         {
             Debug.LogError("One or more required components are not assigned in the inspector.");
             enabled = false;
             return;
         }
 
-        CarController.enabled = false;          // Desactiva el controlador del coche al inicio
-        DriveUi.gameObject.SetActive(false);    // Oculta el UI al inicio
+        carControllerScript.enabled = false;   // Desactiva el controlador del coche al inicio
+        DriveUi.gameObject.SetActive(false);   // Oculta el UI al inicio
     }
 
     void Update()
@@ -52,7 +50,6 @@ public class CarEnterExitSystem : MonoBehaviour
     private void EnterCar()
     {
         isDriving = true;
-        CarController.enabled = true;          // Activa el controlador del coche
         carControllerScript.enabled = true;   
         AudioSource.PlayClipAtPoint(carDoorSound, Car.position); // Activa el script del controlador del coche
         DriveUi.gameObject.SetActive(false);   // Oculta el UI
@@ -65,11 +62,10 @@ public class CarEnterExitSystem : MonoBehaviour
     private void ExitCar()
     {
         isDriving = false;
-        CarController.enabled = false;         // Desactiva el controlador del coche
         carControllerScript.ThrottleOff();     // Detiene la aceleración del coche
         carControllerScript.enabled = false;   // Desactiva el script del controlador del coche
-        StopCarMovement();      
-        AudioSource.PlayClipAtPoint(carDoorSound, Car.position);               // Detiene el movimiento del coche
+        StopCarMovement();                     // Detiene el movimiento del coche
+        AudioSource.PlayClipAtPoint(carDoorSound, Car.position);
         Player.transform.SetParent(null);      // Separa al jugador del coche
         Player.gameObject.SetActive(true);     // Muestra al jugador
         PlayerCam.gameObject.SetActive(true);  // Activa la cámara del jugador
