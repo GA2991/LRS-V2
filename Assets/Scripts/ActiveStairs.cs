@@ -15,9 +15,8 @@ public class ActiveStairs : MonoBehaviour
         {
             MessageScreen.SetActive(true);
             Stairs.SetActive(true);
-
-            GetComponent<Collider>().enabled = false;
             hasActivated = true;
+            GetComponent<Collider>().enabled = false; // Desactiva el collider para que no se active de nuevo
 
             StartCoroutine(DisableMessageAndStairsAfterDelay(4f));
         }
@@ -27,5 +26,7 @@ public class ActiveStairs : MonoBehaviour
     {
         yield return new WaitForSeconds(delay);
         MessageScreen.SetActive(false);
+        gameObject.SetActive(false); // Desactiva el objeto que contiene este script
+            
     }
 }
