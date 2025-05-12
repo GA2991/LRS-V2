@@ -6,20 +6,20 @@ public class MensajeInicial : MonoBehaviour
 
     void Start()
     {
-        // Invocar el método MostrarMensajeInicial después de 2 segundos
+        // Invocar el mï¿½todo MostrarMensajeInicial despuï¿½s de 1 segundos
         Invoke(nameof(MostrarMensajeInicial), 1f);
 
-        // Desactivar el mensaje después de 7 segundos (2 segundos para mostrar + 5 segundos de duración)
+        // Desactivar el mensaje despuï¿½s de 6 segundos (1 segundos para mostrar + 5 segundos de duraciï¿½n)
         Invoke(nameof(OcultarMensajeInicial), 6f);
     }
 
-    // Método para activar el mensaje inicial
+    // Mï¿½todo para activar el mensaje inicial
     public void MostrarMensajeInicial()
     {
         mensajeInicial.SetActive(true);
     }
 
-    // Método para ocultar el mensaje inicial
+    // Mï¿½todo para ocultar el mensaje inicial
     public void OcultarMensajeInicial()
     {
         mensajeInicial.SetActive(false);
