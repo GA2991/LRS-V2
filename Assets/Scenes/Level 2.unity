@@ -17,7 +17,7 @@ RenderSettings:
   m_Fog: 1
   m_FogColor: {r: 0.29646423, g: 0.28593805, b: 0.3018868, a: 1}
   m_FogMode: 2
-  m_FogDensity: 0.1
+  m_FogDensity: 0.02
   m_LinearFogStart: 74.29
   m_LinearFogEnd: 300
   m_AmbientSkyColor: {r: 1, g: 1, b: 1, a: 1}
@@ -7976,10 +7976,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -2416169322692099847, guid: 640f5342ca246dc449141b2697a4eba0, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 646d1687eee194941ae78adb13de6264, type: 2}
     - target: {fileID: 919132149155446097, guid: 640f5342ca246dc449141b2697a4eba0, type: 3}
       propertyPath: m_Name
       value: LRSCityTest
       objectReference: {fileID: 0}
+    - target: {fileID: 3698622373647277171, guid: 640f5342ca246dc449141b2697a4eba0, type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: 488b132f70bbf2640923db131f7221d9, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -10022,8 +10030,12 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5037619873182171991, guid: 4995aabaa7975234d9ce4b17cc800c7c, type: 3}
+      propertyPath: field of view
+      value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 5037619873182171991, guid: 4995aabaa7975234d9ce4b17cc800c7c, type: 3}
       propertyPath: far clip plane
-      value: 120
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 5037619874638700613, guid: 4995aabaa7975234d9ce4b17cc800c7c, type: 3}
       propertyPath: m_RootOrder
@@ -10748,6 +10760,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5895638880277208270, guid: a26fd63bfe21d26409bb87bf48c3cf41, type: 3}
+      propertyPath: m_Intensity
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5979329492584224669, guid: a26fd63bfe21d26409bb87bf48c3cf41, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -10798,15 +10814,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7608578609123795953, guid: a26fd63bfe21d26409bb87bf48c3cf41, type: 3}
       propertyPath: m_Color.b
-      value: 0.10005337
+      value: 0.37967247
       objectReference: {fileID: 0}
     - target: {fileID: 7608578609123795953, guid: a26fd63bfe21d26409bb87bf48c3cf41, type: 3}
       propertyPath: m_Color.g
-      value: 0.4271401
+      value: 0.7091343
       objectReference: {fileID: 0}
     - target: {fileID: 7608578609123795953, guid: a26fd63bfe21d26409bb87bf48c3cf41, type: 3}
       propertyPath: m_Color.r
-      value: 0.6886792
+      value: 0.8490566
+      objectReference: {fileID: 0}
+    - target: {fileID: 7608578609123795953, guid: a26fd63bfe21d26409bb87bf48c3cf41, type: 3}
+      propertyPath: m_Intensity
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
