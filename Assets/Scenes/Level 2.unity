@@ -15,18 +15,18 @@ RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
   m_Fog: 1
-  m_FogColor: {r: 0.5698112, g: 0.4565493, b: 0.381666, a: 1}
-  m_FogMode: 3
-  m_FogDensity: 0.03
-  m_LinearFogStart: 74.29
-  m_LinearFogEnd: 300
+  m_FogColor: {r: 0.3660378, g: 0.2754571, b: 0.20650056, a: 1}
+  m_FogMode: 1
+  m_FogDensity: 0.09
+  m_LinearFogStart: 5
+  m_LinearFogEnd: 30
   m_AmbientSkyColor: {r: 1, g: 1, b: 1, a: 1}
   m_AmbientEquatorColor: {r: 0.8490566, g: 0.8490566, b: 0.8490566, a: 1}
   m_AmbientGroundColor: {r: 0, g: 0, b: 0, a: 1}
   m_AmbientIntensity: 1
   m_AmbientMode: 1
   m_SubtractiveShadowColor: {r: 0.19889641, g: 0.24139453, b: 0.3490566, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: 19b325d8192ae6a449129122516d0427, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: cf09bdd74268f184498d51e302193dbf, type: 2}
   m_HaloStrength: 0.504
   m_FlareStrength: 1
   m_FlareFadeSpeed: 1.75
@@ -68463,6 +68463,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 15.104259
       objectReference: {fileID: 0}
+    - target: {fileID: 6334100252391754151, guid: a39c6ea174b597749a2ab5aed5e38981, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.4139985
+      objectReference: {fileID: 0}
     - target: {fileID: 6374953329345722691, guid: a39c6ea174b597749a2ab5aed5e38981, type: 3}
       propertyPath: m_LocalPosition.y
       value: 15.104259
@@ -68675,6 +68679,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 3.836781
       objectReference: {fileID: 0}
+    - target: {fileID: 7177450667264152527, guid: a39c6ea174b597749a2ab5aed5e38981, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.771
+      objectReference: {fileID: 0}
     - target: {fileID: 7182498184508123040, guid: a39c6ea174b597749a2ab5aed5e38981, type: 3}
       propertyPath: m_LocalPosition.y
       value: 3.1
@@ -68814,6 +68822,10 @@ PrefabInstance:
     - target: {fileID: 7658488362567585324, guid: a39c6ea174b597749a2ab5aed5e38981, type: 3}
       propertyPath: m_LocalPosition.y
       value: 3.3179905
+      objectReference: {fileID: 0}
+    - target: {fileID: 7705236169112252955, guid: a39c6ea174b597749a2ab5aed5e38981, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.4139985
       objectReference: {fileID: 0}
     - target: {fileID: 7769173978422549393, guid: a39c6ea174b597749a2ab5aed5e38981, type: 3}
       propertyPath: m_LocalPosition.y
@@ -69079,6 +69091,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[4]
       value: 
       objectReference: {fileID: 2100000, guid: 067fa5ca23256034a99337b5fdfe160e, type: 2}
+    - target: {fileID: 9196971234513552458, guid: a39c6ea174b597749a2ab5aed5e38981, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.1376585
+      objectReference: {fileID: 0}
     - target: {fileID: 9219478393761844169, guid: a39c6ea174b597749a2ab5aed5e38981, type: 3}
       propertyPath: m_LocalPosition.y
       value: 2.8443432
@@ -85082,6 +85098,22 @@ PrefabInstance:
       propertyPath: crashSound
       value: 
       objectReference: {fileID: 1335767603}
+    - target: {fileID: 1707485683950101243, guid: fd995f914a5a9a443b98636785727138, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.000086388914
+      objectReference: {fileID: 0}
+    - target: {fileID: 1707485683950101243, guid: fd995f914a5a9a443b98636785727138, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.67
+      objectReference: {fileID: 0}
+    - target: {fileID: 1707485683950101243, guid: fd995f914a5a9a443b98636785727138, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -11.323113
+      objectReference: {fileID: 0}
+    - target: {fileID: 2062988005150018419, guid: fd995f914a5a9a443b98636785727138, type: 3}
+      propertyPath: m_Lens.FarClipPlane
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 2742001174396054011, guid: fd995f914a5a9a443b98636785727138, type: 3}
       propertyPath: maxSpeed
       value: 130
@@ -85089,6 +85121,10 @@ PrefabInstance:
     - target: {fileID: 4173759203877041777, guid: fd995f914a5a9a443b98636785727138, type: 3}
       propertyPath: m_Name
       value: Car2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5424587045692190187, guid: fd995f914a5a9a443b98636785727138, type: 3}
+      propertyPath: far clip plane
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 6180926428381317868, guid: fd995f914a5a9a443b98636785727138, type: 3}
       propertyPath: Player
@@ -86032,7 +86068,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5037619873182171991, guid: 4995aabaa7975234d9ce4b17cc800c7c, type: 3}
       propertyPath: far clip plane
-      value: 300
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 5037619873182171991, guid: 4995aabaa7975234d9ce4b17cc800c7c, type: 3}
       propertyPath: m_BackGroundColor.a
