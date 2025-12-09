@@ -597,37 +597,44 @@ public class PrometeoCarController : MonoBehaviour
     // 1 is the slowest and 10 is the fastest deceleration. This method is called by the function InvokeRepeating,
     // usually every 0.1f when the user is not pressing W (throttle), S (reverse) or Space bar (handbrake).
     public void DecelerateCar(){
-      if(Mathf.Abs(localVelocityX) > 2.5f){
+    if(Mathf.Abs(localVelocityX) > 2.5f){
         isDrifting = true;
         DriftCarPS();
-      }else{
+    }else{
         isDrifting = false;
         DriftCarPS();
-      }
-      // The following part resets the throttle power to 0 smoothly.
-      if(throttleAxis != 0f){
+    }
+
+    // Resetear el throttle suavemente
+    if(throttleAxis != 0f){
         if(throttleAxis > 0f){
-          throttleAxis = throttleAxis - (Time.deltaTime * 10f);
+            throttleAxis -= Time.deltaTime * 10f;
         }else if(throttleAxis < 0f){
-            throttleAxis = throttleAxis + (Time.deltaTime * 10f);
+            throttleAxis += Time.deltaTime * 10f;
         }
         if(Mathf.Abs(throttleAxis) < 0.15f){
-          throttleAxis = 0f;
+            throttleAxis = 0f;
         }
-      }
-      carRigidbody.velocity = carRigidbody.velocity * (1f / (1f + (0.025f * decelerationMultiplier)));
-      // Since we want to decelerate the car, we are going to remove the torque from the wheels of the car.
-      frontLeftCollider.motorTorque = 0;
-      frontRightCollider.motorTorque = 0;
-      rearLeftCollider.motorTorque = 0;
-      rearRightCollider.motorTorque = 0;
-      // If the magnitude of the car's velocity is less than 0.25f (very slow velocity), then stop the car completely and
-      // also cancel the invoke of this method.
-      if(carRigidbody.velocity.magnitude < 0.25f){
+    }
+
+    // Solo modificar la velocidad si el rigidbody no es kinematic
+    if(!carRigidbody.isKinematic){
+        carRigidbody.velocity = carRigidbody.velocity * (1f / (1f + (0.025f * decelerationMultiplier)));
+    }
+
+    // Quitar torque de las ruedas
+    frontLeftCollider.motorTorque = 0;
+    frontRightCollider.motorTorque = 0;
+    rearLeftCollider.motorTorque = 0;
+    rearRightCollider.motorTorque = 0;
+
+    // Si la velocidad es muy baja, detener el coche y cancelar la invocación
+    if(!carRigidbody.isKinematic && carRigidbody.velocity.magnitude < 0.25f){
         carRigidbody.velocity = Vector3.zero;
         CancelInvoke("DecelerateCar");
-      }
     }
+}
+
 
     // This function applies brake torque to the wheels according to the brake force given by the user.
     public void Brakes(){

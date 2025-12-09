@@ -47,6 +47,8 @@ public class CarEnterExitSystem : MonoBehaviour
         }
     }
 
+   
+
     private void EnterCar()
     {
         isDriving = true;
@@ -57,6 +59,11 @@ public class CarEnterExitSystem : MonoBehaviour
         Player.gameObject.SetActive(false);    // Oculta al jugador
         PlayerCam.gameObject.SetActive(false); // Activa la cámara del coche
         CarCam.gameObject.SetActive(true);
+        StopAllCoroutines(); // cancela cualquier WaitForCarToStop activo
+
+
+        Rigidbody rb = Car.GetComponent<Rigidbody>();
+        if (rb != null) rb.isKinematic = false; // activar físicas al conducir
     }
 
     private void ExitCar()
@@ -64,13 +71,45 @@ public class CarEnterExitSystem : MonoBehaviour
         isDriving = false;
         carControllerScript.ThrottleOff();     // Detiene la aceleración del coche
         carControllerScript.enabled = false;   // Desactiva el script del controlador del coche
-        StopCarMovement();                     // Detiene el movimiento del coche
+                         // Detiene el movimiento del coche
         AudioSource.PlayClipAtPoint(carDoorSound, Car.position);
         Player.transform.SetParent(null);      // Separa al jugador del coche
         Player.gameObject.SetActive(true);     // Muestra al jugador
         PlayerCam.gameObject.SetActive(true);  // Activa la cámara del jugador
         CarCam.gameObject.SetActive(false);
+
+        Rigidbody rb = Car.GetComponent<Rigidbody>();
+        if (rb != null)
+        {
+            // No lo ponemos kinematic de inmediato, dejamos que se frene naturalmente
+            StartCoroutine(WaitForCarToStop(rb));
+        }
+        
     }
+
+    private IEnumerator WaitForCarToStop(Rigidbody rb)
+{
+    float stillTime = 0f;
+
+    while (!isDriving)
+    {
+        if (rb.velocity.magnitude < 0.5f)
+        {
+            stillTime += Time.deltaTime;
+            if (stillTime > 2f) // 2 segundos quieto
+            {
+                rb.isKinematic = true;
+                yield break;
+            }
+        }
+        else
+        {
+            stillTime = 0f; // se resetea si vuelve a moverse
+        }
+        yield return null;
+    }
+}
+
 
     private void StopCarMovement()
     {
@@ -79,10 +118,10 @@ public class CarEnterExitSystem : MonoBehaviour
         {
             carRigidbody.velocity = Vector3.zero;
             carRigidbody.angularVelocity = Vector3.zero;
-            ApplyBrakes(carRigidbody); // Aplica fuerza de frenado
-            carRigidbody.Sleep(); // Pone el rigidbody en modo sleep para detener cualquier movimiento residual
+            carRigidbody.Sleep();
         }
     }
+
 
     private void ApplyBrakes(Rigidbody carRigidbody)
     {
