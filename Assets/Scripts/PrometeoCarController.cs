@@ -368,7 +368,6 @@ public class PrometeoCarController : MonoBehaviour
 
 
       // We call the method AnimateWheelMeshes() in order to match the wheel collider movements with the 3D meshes of the wheels.
-      AnimateWheelMeshes();
 
     }
 
@@ -462,35 +461,7 @@ public class PrometeoCarController : MonoBehaviour
     }
 
     // This method matches both the position and rotation of the WheelColliders with the WheelMeshes.
-    void AnimateWheelMeshes(){
-      try{
-        Quaternion FLWRotation;
-        Vector3 FLWPosition;
-        frontLeftCollider.GetWorldPose(out FLWPosition, out FLWRotation);
-        frontLeftMesh.transform.position = FLWPosition;
-        frontLeftMesh.transform.rotation = FLWRotation;
-
-        Quaternion FRWRotation;
-        Vector3 FRWPosition;
-        frontRightCollider.GetWorldPose(out FRWPosition, out FRWRotation);
-        frontRightMesh.transform.position = FRWPosition;
-        frontRightMesh.transform.rotation = FRWRotation;
-
-        Quaternion RLWRotation;
-        Vector3 RLWPosition;
-        rearLeftCollider.GetWorldPose(out RLWPosition, out RLWRotation);
-        rearLeftMesh.transform.position = RLWPosition;
-        rearLeftMesh.transform.rotation = RLWRotation;
-
-        Quaternion RRWRotation;
-        Vector3 RRWPosition;
-        rearRightCollider.GetWorldPose(out RRWPosition, out RRWRotation);
-        rearRightMesh.transform.position = RRWPosition;
-        rearRightMesh.transform.rotation = RRWRotation;
-      }catch(Exception ex){
-        Debug.LogWarning(ex);
-      }
-    }
+  
 
     //
     //ENGINE AND BRAKING METHODS

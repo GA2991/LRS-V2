@@ -129,21 +129,22 @@ public class CarEnterExitSystem : MonoBehaviour
         carRigidbody.AddTorque(-carRigidbody.angularVelocity * 100f, ForceMode.Acceleration); // Aumenta la fuerza de frenado angular
     }
 
-    void OnTriggerStay(Collider col)
+    void OnTriggerEnter(Collider col)
     {
-        if (col.gameObject.tag == "Player")
+        if (col.CompareTag("Player"))
         {
-            DriveUi.gameObject.SetActive(true); // Mostrar el UI cuando el jugador está cerca
+            DriveUi.SetActive(true);
             canDrive = true;
         }
     }
 
     void OnTriggerExit(Collider col)
     {
-        if (col.gameObject.tag == "Player")
+        if (col.CompareTag("Player"))
         {
-            DriveUi.gameObject.SetActive(false); // Ocultar el UI al alejarse
+            DriveUi.SetActive(false);
             canDrive = false;
         }
     }
+
 }
