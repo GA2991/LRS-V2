@@ -70,16 +70,22 @@ public class PlayerInput : MonoBehaviour
     }
 
     IEnumerator sitDown()
-    {
-        if (physicalCC == null || cc == null)
-            yield break;
+{
+    if (physicalCC == null || cc == null) yield break;
 
-        Vector3 raycastOrigin = transform.position + Vector3.up * baseHeight;
-        if (isSitting && Physics.Raycast(raycastOrigin, Vector3.up, baseHeight * 0.5f))
+    // CAMBIO AQUÍ: 
+    // Lanzamos el rayo desde los pies (transform.position) hacia arriba
+    // con una distancia igual a la altura que tendrías al estar de pie.
+    if (isSitting) 
+    {
+        // Un pequeño margen (0.1f) para evitar que detecte el propio suelo
+        if (Physics.Raycast(transform.position + Vector3.up * 0.1f, Vector3.up, baseHeight))
         {
+            Debug.Log("No hay espacio suficiente para pararse");
             sitCort = null;
             yield break;
         }
+    }
         isSitting = !isSitting;
 
         float t = 0;
