@@ -48,7 +48,17 @@ public class PlayerInput : MonoBehaviour
 
         if (physicalCC.isGround)
         {
-            float currentSpeed = Input.GetKey(KeyCode.LeftShift) ? sprintSpeed : speed;
+            float currentSpeed;
+
+        if (isSitting)
+        {
+            currentSpeed = speed; // velocidad normal (ya reducida)
+        }
+        else
+        {
+            currentSpeed = Input.GetKey(KeyCode.LeftShift) ? sprintSpeed : speed;
+        }
+
             
             physicalCC.moveInput = Vector3.ClampMagnitude(transform.forward
                             * Input.GetAxis("Vertical")
