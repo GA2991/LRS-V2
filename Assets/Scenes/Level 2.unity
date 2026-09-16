@@ -91508,6 +91508,14 @@ PrefabInstance:
       propertyPath: m_StaticShadowCaster
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7764606028993301668, guid: a39c6ea174b597749a2ab5aed5e38981, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 227.22
+      objectReference: {fileID: 0}
+    - target: {fileID: -7764606028993301668, guid: a39c6ea174b597749a2ab5aed5e38981, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -69.89
+      objectReference: {fileID: 0}
     - target: {fileID: -7764517907831473326, guid: a39c6ea174b597749a2ab5aed5e38981, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
@@ -117136,6 +117144,14 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 6895544847814473708, guid: a39c6ea174b597749a2ab5aed5e38981, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 227.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 6895544847814473708, guid: a39c6ea174b597749a2ab5aed5e38981, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -77.52
+      objectReference: {fileID: 0}
     - target: {fileID: 6896872427985047610, guid: a39c6ea174b597749a2ab5aed5e38981, type: 3}
       propertyPath: m_Layer
       value: 7
@@ -117821,8 +117837,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7250006150877417723, guid: a39c6ea174b597749a2ab5aed5e38981, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 244.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 7250006150877417723, guid: a39c6ea174b597749a2ab5aed5e38981, type: 3}
       propertyPath: m_LocalPosition.y
       value: 2.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 7250006150877417723, guid: a39c6ea174b597749a2ab5aed5e38981, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -118.46
       objectReference: {fileID: 0}
     - target: {fileID: 7250110491529514195, guid: a39c6ea174b597749a2ab5aed5e38981, type: 3}
       propertyPath: m_StaticShadowCaster
