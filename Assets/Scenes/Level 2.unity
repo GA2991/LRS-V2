@@ -80345,6 +80345,14 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1.4878999
       objectReference: {fileID: 0}
+    - target: {fileID: 672430234291430780, guid: 0f01ba3471cf25d4abdeae03cc07f149, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 271.31
+      objectReference: {fileID: 0}
+    - target: {fileID: 672430234291430780, guid: 0f01ba3471cf25d4abdeae03cc07f149, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -66.52
+      objectReference: {fileID: 0}
     - target: {fileID: 889517046639137428, guid: 0f01ba3471cf25d4abdeae03cc07f149, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.4878999
@@ -91148,6 +91156,14 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: -8031029684148514968, guid: a39c6ea174b597749a2ab5aed5e38981, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 215.82
+      objectReference: {fileID: 0}
+    - target: {fileID: -8031029684148514968, guid: a39c6ea174b597749a2ab5aed5e38981, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -142.1
+      objectReference: {fileID: 0}
     - target: {fileID: -8030864035884840505, guid: a39c6ea174b597749a2ab5aed5e38981, type: 3}
       propertyPath: m_StaticShadowCaster
       value: 0
@@ -98527,6 +98543,14 @@ PrefabInstance:
     - target: {fileID: -3769518894468155382, guid: a39c6ea174b597749a2ab5aed5e38981, type: 3}
       propertyPath: m_StaticShadowCaster
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -3766507359600316507, guid: a39c6ea174b597749a2ab5aed5e38981, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 225.24
+      objectReference: {fileID: 0}
+    - target: {fileID: -3766507359600316507, guid: a39c6ea174b597749a2ab5aed5e38981, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -141.61
       objectReference: {fileID: 0}
     - target: {fileID: -3765457148675881015, guid: a39c6ea174b597749a2ab5aed5e38981, type: 3}
       propertyPath: m_Layer
