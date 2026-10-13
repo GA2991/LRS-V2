@@ -80279,11 +80279,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 177744166587617800, guid: 0f01ba3471cf25d4abdeae03cc07f149, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 660.97
+      value: 652.66
       objectReference: {fileID: 0}
     - target: {fileID: 177744166587617800, guid: 0f01ba3471cf25d4abdeae03cc07f149, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -174.28
+      value: -170.75
       objectReference: {fileID: 0}
     - target: {fileID: 207748164906407338, guid: 0f01ba3471cf25d4abdeae03cc07f149, type: 3}
       propertyPath: m_Layer
@@ -91146,11 +91146,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8053467453029726869, guid: a39c6ea174b597749a2ab5aed5e38981, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 649.42
+      value: 645.34
       objectReference: {fileID: 0}
     - target: {fileID: -8053467453029726869, guid: a39c6ea174b597749a2ab5aed5e38981, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -186.41
+      value: -180.95
       objectReference: {fileID: 0}
     - target: {fileID: -8053412129733317725, guid: a39c6ea174b597749a2ab5aed5e38981, type: 3}
       propertyPath: m_StaticShadowCaster
@@ -92264,6 +92264,14 @@ PrefabInstance:
       propertyPath: m_StaticShadowCaster
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7393122316760452324, guid: a39c6ea174b597749a2ab5aed5e38981, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 603.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -7393122316760452324, guid: a39c6ea174b597749a2ab5aed5e38981, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -152.9
+      objectReference: {fileID: 0}
     - target: {fileID: -7392803063254922251, guid: a39c6ea174b597749a2ab5aed5e38981, type: 3}
       propertyPath: m_StaticShadowCaster
       value: 0
@@ -92475,6 +92483,14 @@ PrefabInstance:
     - target: {fileID: -7236458544870188879, guid: a39c6ea174b597749a2ab5aed5e38981, type: 3}
       propertyPath: m_StaticShadowCaster
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7234554098001529241, guid: a39c6ea174b597749a2ab5aed5e38981, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 589.37
+      objectReference: {fileID: 0}
+    - target: {fileID: -7234554098001529241, guid: a39c6ea174b597749a2ab5aed5e38981, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -157.39
       objectReference: {fileID: 0}
     - target: {fileID: -7229196488026483255, guid: a39c6ea174b597749a2ab5aed5e38981, type: 3}
       propertyPath: m_StaticShadowCaster
@@ -104484,6 +104500,14 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: -709973179578641557, guid: a39c6ea174b597749a2ab5aed5e38981, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 598.09
+      objectReference: {fileID: 0}
+    - target: {fileID: -709973179578641557, guid: a39c6ea174b597749a2ab5aed5e38981, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -97.56
+      objectReference: {fileID: 0}
     - target: {fileID: -705710897841350279, guid: a39c6ea174b597749a2ab5aed5e38981, type: 3}
       propertyPath: m_Layer
       value: 7
@@ -113764,6 +113788,14 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 4742001528359783719, guid: a39c6ea174b597749a2ab5aed5e38981, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 672.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4742001528359783719, guid: a39c6ea174b597749a2ab5aed5e38981, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -159
+      objectReference: {fileID: 0}
     - target: {fileID: 4742167385585170096, guid: a39c6ea174b597749a2ab5aed5e38981, type: 3}
       propertyPath: m_Layer
       value: 7
@@ -120059,6 +120091,14 @@ PrefabInstance:
     - target: {fileID: 8317402388367682967, guid: a39c6ea174b597749a2ab5aed5e38981, type: 3}
       propertyPath: m_StaticShadowCaster
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8320109892239502078, guid: a39c6ea174b597749a2ab5aed5e38981, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 666.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8320109892239502078, guid: a39c6ea174b597749a2ab5aed5e38981, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -172.9
       objectReference: {fileID: 0}
     - target: {fileID: 8320575168506233920, guid: a39c6ea174b597749a2ab5aed5e38981, type: 3}
       propertyPath: m_StaticEditorFlags
