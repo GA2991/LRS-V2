@@ -99817,11 +99817,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -3270304469495175872, guid: a39c6ea174b597749a2ab5aed5e38981, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 101.74
+      value: 101.7
       objectReference: {fileID: 0}
     - target: {fileID: -3270304469495175872, guid: a39c6ea174b597749a2ab5aed5e38981, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -17.86
+      value: -19.2
       objectReference: {fileID: 0}
     - target: {fileID: -3267729341197750716, guid: a39c6ea174b597749a2ab5aed5e38981, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -107735,6 +107735,14 @@ PrefabInstance:
       propertyPath: m_StaticShadowCaster
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1216288632795535748, guid: a39c6ea174b597749a2ab5aed5e38981, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 116
+      objectReference: {fileID: 0}
+    - target: {fileID: 1216288632795535748, guid: a39c6ea174b597749a2ab5aed5e38981, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -67.1
+      objectReference: {fileID: 0}
     - target: {fileID: 1217948164839182060, guid: a39c6ea174b597749a2ab5aed5e38981, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
@@ -114949,11 +114957,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5408286689187064898, guid: a39c6ea174b597749a2ab5aed5e38981, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 82.2
+      value: 85.7
       objectReference: {fileID: 0}
     - target: {fileID: 5408286689187064898, guid: a39c6ea174b597749a2ab5aed5e38981, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -44.1
+      value: -45.4
       objectReference: {fileID: 0}
     - target: {fileID: 5412032745707513961, guid: a39c6ea174b597749a2ab5aed5e38981, type: 3}
       propertyPath: m_StaticShadowCaster
@@ -118101,11 +118109,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7169956140711755102, guid: a39c6ea174b597749a2ab5aed5e38981, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 80.8
+      value: 85.9
       objectReference: {fileID: 0}
     - target: {fileID: 7169956140711755102, guid: a39c6ea174b597749a2ab5aed5e38981, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -25.2
+      value: -27.2
       objectReference: {fileID: 0}
     - target: {fileID: 7172910801730536098, guid: a39c6ea174b597749a2ab5aed5e38981, type: 3}
       propertyPath: m_StaticShadowCaster
